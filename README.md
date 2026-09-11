@@ -1,5 +1,7 @@
 # Agent Runs Template
 
+[English](README.md) | [繁體中文](README.zh-TW.md)
+
 A reusable, vendor-neutral template for durable AI coding-agent execution state.
 
 This repository is intended to be used as a **GitHub template repository**. Create a separate instance repository for real execution data, especially when logs may contain private engineering context.
