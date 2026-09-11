@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "stream": "web",
+  "status": "in_progress",
+  "repositories": ["acme/example-web"],
+  "active_run": "runs/20260911-claude-example-a",
+  "progress": {
+    "completed": [
+      "Added invitation form",
+      "Connected form submission to the API"
+    ],
+    "current": "Implement invitation acceptance page",
+    "next": "Run web tests and typecheck"
+  },
+  "verification": {
+    "tests": "pending",
+    "typecheck": "pending",
+    "ci": "not_started"
+  },
+  "blockers": []
+}
