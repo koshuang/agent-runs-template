@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/event.schema.json",
+  "title": "Agent Runs Event",
+  "type": "object",
+  "required": ["schema_version", "ts", "event"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "ts": {"type": "string", "format": "date-time"},
+    "event": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string"},
+    "agent": {"type": "string"},
+    "path": {"type": "string"},
+    "command": {"type": "string"},
+    "exit_code": {"type": "integer"},
+    "summary": {"type": "string"},
+    "evidence": {"type": ["string", "object", "array", "null"]}
+  },
+  "additionalProperties": true
+}
