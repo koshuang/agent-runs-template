@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "stream": "api",
+  "status": "completed",
+  "repositories": ["acme/example-api"],
+  "active_run": null,
+  "progress": {
+    "completed": [
+      "Added invitation creation endpoint",
+      "Added invitation acceptance endpoint",
+      "Added expiration validation",
+      "Verified API test suite"
+    ],
+    "current": null,
+    "next": null
+  },
+  "verification": {
+    "tests": "pass",
+    "ci": "pass"
+  },
+  "blockers": []
+}
