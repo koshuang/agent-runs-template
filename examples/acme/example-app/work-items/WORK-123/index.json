@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "work_item": "WORK-123",
+  "title": "Add team invitation flow",
+  "status": "in_progress",
+  "source": {
+    "type": "github_issue",
+    "repository": "acme/example-app",
+    "number": 123,
+    "url": "https://github.com/acme/example-app/issues/123"
+  },
+  "streams": {
+    "api": {
+      "status": "completed",
+      "state": "streams/api/state.json",
+      "pr": "acme/example-api#231",
+      "blocker": null
+    },
+    "web": {
+      "status": "in_progress",
+      "state": "streams/web/state.json",
+      "pr": null,
+      "blocker": null
+    },
+    "e2e": {
+      "status": "blocked",
+      "state": "streams/e2e/state.json",
+      "pr": null,
+      "blocker": "Waiting for the invitation acceptance UI"
+    }
+  },
+  "acceptance_criteria": {
+    "invite_api": "verified",
+    "invite_ui": "in_progress",
+    "accept_invitation": "pending",
+    "expired_invitation": "pending",
+    "e2e": "blocked"
+  },
+  "human_attention": {
+    "required": false,
+    "reason": null
+  },
+  "next_action": "Complete the invitation acceptance UI"
+}
