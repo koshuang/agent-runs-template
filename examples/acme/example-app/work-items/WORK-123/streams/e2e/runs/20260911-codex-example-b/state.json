@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260911-codex-example-b",
+  "agent": "codex",
+  "status": "blocked",
+  "phase": "verification",
+  "started_at": "2026-09-11T14:20:00+08:00",
+  "last_activity_at": "2026-09-11T14:35:00+08:00",
+  "branch": null,
+  "progress": {
+    "completed": [
+      "Prepared the synthetic invitation-flow E2E scenario"
+    ],
+    "current": "Waiting for the web dependency",
+    "next": "Run E2E after the invitation acceptance UI is available"
+  },
+  "blockers": [
+    {
+      "type": "dependency",
+      "summary": "Web stream is not verification-ready",
+      "human_attention_required": false
+    }
+  ],
+  "artifacts": {
+    "pr": null,
+    "commits": []
+  },
+  "verification": {
+    "e2e": "blocked"
+  },
+  "completed_at": null
+}
