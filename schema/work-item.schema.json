@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/work-item.schema.json",
+  "title": "Agent Runs Work Item State",
+  "type": "object",
+  "required": ["schema_version", "work_item", "title", "status", "streams", "acceptance_criteria", "human_attention", "next_action"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "work_item": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "status": {"enum": ["pending", "in_progress", "blocked", "verification_pending", "completed", "cancelled"]},
+    "source": {
+      "type": "object",
+      "properties": {
+        "type": {"type": "string"},
+        "repository": {"type": "string"},
+        "number": {"type": ["integer", "string"]},
+        "url": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "streams": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["status", "state"],
+        "properties": {
+          "status": {"enum": ["pending", "in_progress", "blocked", "verification_pending", "completed", "cancelled"]},
+          "state": {"type": "string"},
+          "pr": {"type": ["string", "null"]},
+          "blocker": {"type": ["string", "null"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "acceptance_criteria": {
+      "type": "object",
+      "additionalProperties": {"enum": ["pending", "in_progress", "blocked", "verified", "not_applicable"]}
+    },
+    "human_attention": {
+      "type": "object",
+      "required": ["required", "reason"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "reason": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "next_action": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}
