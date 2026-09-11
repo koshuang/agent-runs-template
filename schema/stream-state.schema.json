@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/stream-state.schema.json",
+  "title": "Agent Runs Stream State",
+  "type": "object",
+  "required": ["schema_version", "stream", "status", "active_run", "progress", "verification", "blockers"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "stream": {"type": "string", "minLength": 1},
+    "status": {"enum": ["pending", "in_progress", "blocked", "verification_pending", "completed", "cancelled"]},
+    "repositories": {"type": "array", "items": {"type": "string"}},
+    "active_run": {"type": ["string", "null"]},
+    "progress": {
+      "type": "object",
+      "required": ["completed", "current", "next"],
+      "properties": {
+        "completed": {"type": "array", "items": {"type": "string"}},
+        "current": {"type": ["string", "null"]},
+        "next": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "verification": {"type": "object", "additionalProperties": {"type": ["string", "boolean", "number", "null"]}},
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "summary", "human_attention_required"],
+        "properties": {
+          "type": {"type": "string"},
+          "summary": {"type": "string"},
+          "human_attention_required": {"type": "boolean"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
