@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "stream": "e2e",
+  "status": "blocked",
+  "repositories": ["acme/example-e2e"],
+  "active_run": "runs/20260911-codex-example-b",
+  "progress": {
+    "completed": [
+      "Prepared invitation-flow scenario"
+    ],
+    "current": "Waiting for the invitation acceptance UI",
+    "next": "Run the end-to-end scenario when the web stream is verification-ready"
+  },
+  "verification": {
+    "e2e": "blocked",
+    "ci": "not_started"
+  },
+  "blockers": [
+    {
+      "type": "dependency",
+      "summary": "The web invitation acceptance page is not complete yet",
+      "human_attention_required": false
+    }
+  ]
+}
