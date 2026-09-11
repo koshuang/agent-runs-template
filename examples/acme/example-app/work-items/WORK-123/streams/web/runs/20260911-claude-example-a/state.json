@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260911-claude-example-a",
+  "agent": "claude-code",
+  "status": "in_progress",
+  "phase": "implementation",
+  "started_at": "2026-09-11T14:03:12+08:00",
+  "last_activity_at": "2026-09-11T14:41:03+08:00",
+  "branch": "feat/example-team-invitations",
+  "progress": {
+    "completed": [
+      "Reviewed synthetic invitation flow",
+      "Implemented invitation form"
+    ],
+    "current": "Implement invitation acceptance page",
+    "next": "Run web tests and typecheck"
+  },
+  "blockers": [],
+  "artifacts": {
+    "pr": null,
+    "commits": ["1111111", "2222222"]
+  },
+  "verification": {
+    "tests": "pending",
+    "typecheck": "pending"
+  },
+  "completed_at": null
+}
